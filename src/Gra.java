@@ -2,13 +2,12 @@ import java.util.*;
 
 public class Gra {
     private ArrayList<Integer> wpisaneLiczby;
-    private HashSet<Integer> wylosowaneLiczby;
+    private static HashSet<Integer> wylosowaneLiczby = new HashSet<>();
     private List<Integer> trafioneLiczby;
 
     private void wylosuj(){
-        wylosowaneLiczby = new HashSet<>();
         while(wylosowaneLiczby.size()<6) {
-            wylosowaneLiczby.add((int)(Math.random()*10+1));
+            wylosowaneLiczby.add((int)(Math.random()*100+1));
         }
     }
 
