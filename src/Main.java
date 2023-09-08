@@ -30,19 +30,15 @@ public class Main {
             int roznica = losowanaLiczba > wpisanaLiczba ? losowanaLiczba - wpisanaLiczba : wpisanaLiczba - losowanaLiczba;
             //dzielenie całkowite  jeżeli dzielimy liczby calkowite wynik jest całkowity
             roznica = roznica/10;
-            switch (roznica){
-                case 0:
-                    System.out.println("Było bardzo blisko");
-                    break;
-                case 1:
-                    System.out.println("Było blisko");
-                    break;
-                case 2:
-                    System.out.println("Nie najgorzej");
-                    break;
-                default:
-                    System.out.println("Może innym razem");
-            }
+            System.out.println(
+                    switch (roznica){
+                        case 0 -> "Było bardzo blisko";
+                        case 1 -> "Było blisko";
+                        case 2 -> "Nie najgorzej";
+                        default -> "Może innym razem";
+                    }
+            );
+
 
         }
 
