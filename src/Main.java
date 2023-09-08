@@ -24,6 +24,12 @@ public class Main {
         Scanner klawiatura = new Scanner(System.in);
         int wpisanaLiczba = klawiatura.nextInt();
         System.out.println("Wpisano liczbę"+wpisanaLiczba);
+        if(losowanaLiczba == wpisanaLiczba){
+            System.out.println("Gratulacje");
+        }
+        else{
+            System.out.println("Może innym razem");
+        }
 
     }
 }
