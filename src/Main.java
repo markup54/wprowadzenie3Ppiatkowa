@@ -28,7 +28,22 @@ public class Main {
             System.out.println("Gratulacje");
         } else {
             int roznica = losowanaLiczba > wpisanaLiczba ? losowanaLiczba - wpisanaLiczba : wpisanaLiczba - losowanaLiczba;
-            System.out.println("Może innym razem");
+            //dzielenie całkowite  jeżeli dzielimy liczby calkowite wynik jest całkowity
+            roznica = roznica/10;
+            switch (roznica){
+                case 0:
+                    System.out.println("Było bardzo blisko");
+                    break;
+                case 1:
+                    System.out.println("Było blisko");
+                    break;
+                case 2:
+                    System.out.println("Nie najgorzej");
+                    break;
+                default:
+                    System.out.println("Może innym razem");
+            }
+
         }
 
     }
