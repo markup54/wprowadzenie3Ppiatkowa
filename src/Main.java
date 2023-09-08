@@ -8,16 +8,7 @@ public class Main {
         }
         return wylosowaneLiczby;
     }
-    public static void main(String[] args) {
-        System.out.println("Witaj na losowaniu liczb");
-
-        System.out.println("losowanie 6 liczb całkowitej z zakresu od 1 do 100");
-
-        HashSet <Integer>wylosowaneLiczby = wylosuj();
-        for (int wartoscWylosowana:wylosowaneLiczby) {
-            System.out.println(wartoscWylosowana);
-        }
-
+    private static ArrayList<Integer> wpiszZKlawiatury(){
         ArrayList<Integer> wpisaneLiczby = new ArrayList<>();
         Scanner klawiatura = new Scanner(System.in);
         for (int i = 0; i < 6; i++) {
@@ -28,16 +19,29 @@ public class Main {
                 liczba = klawiatura.nextInt();
             }
             wpisaneLiczby.add(liczba);
-
         }
-        System.out.println("Wpisane liczby"+wpisaneLiczby);
+        return wpisaneLiczby;
+    }
+    private static List<Integer> sprawdzTrafione(HashSet<Integer> wylosowaneLiczby, ArrayList<Integer> wpisaneLiczby ){
         List<Integer> trafioneLiczby = new LinkedList<>();
-
         for (Integer wpisanaLiczba:
-             wpisaneLiczby) {
+                wpisaneLiczby) {
             if(wylosowaneLiczby.contains(wpisanaLiczba))
                 trafioneLiczby.add(wpisanaLiczba);
         }
+        return trafioneLiczby;
+    }
+    public static void main(String[] args) {
+        System.out.println("Witaj na losowaniu liczb");
+        System.out.println("losowanie 6 liczb całkowitej z zakresu od 1 do 100");
+        HashSet <Integer>wylosowaneLiczby = wylosuj();
+        for (int wartoscWylosowana:wylosowaneLiczby) {
+            System.out.println(wartoscWylosowana);
+        }
+
+        ArrayList<Integer> wpisaneLiczby =wpiszZKlawiatury();
+        System.out.println("Wpisane liczby"+wpisaneLiczby);
+        List<Integer> trafioneLiczby = sprawdzTrafione(wylosowaneLiczby,wpisaneLiczby);
         System.out.println("Odgadnięto "+trafioneLiczby);
 
         //TODO: wydzielić do odzielnej klasy
