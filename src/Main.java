@@ -10,17 +10,16 @@ public class Main {
         //System.out.println("wylosowana liczba" + losowanaLiczba);
         System.out.println("Zgadnij liczbę");
         Scanner klawiatura = new Scanner(System.in);
-        int wpisanaLiczba = klawiatura.nextInt();
-        while (wpisanaLiczba != losowanaLiczba) {
-
+        int wpisanaLiczba;
+        do {
+            wpisanaLiczba = klawiatura.nextInt();
+            System.out.println("Wpisano liczbę" + wpisanaLiczba);
             if (losowanaLiczba < wpisanaLiczba) {
                 System.out.println("wpisano za dużo");
             } else {
                 System.out.println("Wpisano za mało");
             }
-            wpisanaLiczba = klawiatura.nextInt();
-            System.out.println("Wpisano liczbę" + wpisanaLiczba);
-        }
+        } while (wpisanaLiczba != losowanaLiczba);
         System.out.println("Gratulacje");
 
     }
