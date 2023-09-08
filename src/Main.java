@@ -9,7 +9,7 @@ public class Main {
         komentarz wieloliniowy
          */
         System.out.println("losowanie liczby całkowitej z zakresu od 1 do 100");
-        int losowanaLiczba = (int)(Math.random()*100+1);
+        int losowanaLiczba = (int) (Math.random() * 100 + 1);
         //Math.random() -losuje liczbę z zakresu<0,1)
         /*typy proste
         byte short int long - typy calkowite
@@ -19,15 +19,15 @@ public class Main {
         rzutowanie rozszezrające - domyślnie
         rzutowanie zawężające np z double (int)
         */
-        System.out.println("wylosowana liczba"+losowanaLiczba);
+        System.out.println("wylosowana liczba" + losowanaLiczba);
         System.out.println("Zgadnij liczbę");
         Scanner klawiatura = new Scanner(System.in);
         int wpisanaLiczba = klawiatura.nextInt();
-        System.out.println("Wpisano liczbę"+wpisanaLiczba);
-        if(losowanaLiczba == wpisanaLiczba){
+        System.out.println("Wpisano liczbę" + wpisanaLiczba);
+        if (losowanaLiczba == wpisanaLiczba) {
             System.out.println("Gratulacje");
-        }
-        else{
+        } else {
+            int roznica = losowanaLiczba > wpisanaLiczba ? losowanaLiczba - wpisanaLiczba : wpisanaLiczba - losowanaLiczba;
             System.out.println("Może innym razem");
         }
 
