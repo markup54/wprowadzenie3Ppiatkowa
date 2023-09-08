@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Witaj na losowaniu liczb");
@@ -17,6 +19,11 @@ public class Main {
         rzutowanie rozszezrające - domyślnie
         rzutowanie zawężające np z double (int)
         */
-        System.out.println(losowanaLiczba);
+        System.out.println("wylosowana liczba"+losowanaLiczba);
+        System.out.println("Zgadnij liczbę");
+        Scanner klawiatura = new Scanner(System.in);
+        int wpisanaLiczba = klawiatura.nextInt();
+        System.out.println("Wpisano liczbę"+wpisanaLiczba);
+
     }
 }
