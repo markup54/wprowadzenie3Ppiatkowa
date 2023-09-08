@@ -10,21 +10,18 @@ public class Main {
         //System.out.println("wylosowana liczba" + losowanaLiczba);
         System.out.println("Zgadnij liczbę");
         Scanner klawiatura = new Scanner(System.in);
-        int wpisanaLiczba;
-        for (int i = 0; i < 10; i++) {
+        int wpisanaLiczba = klawiatura.nextInt();
+        while (wpisanaLiczba != losowanaLiczba) {
+
+            if (losowanaLiczba < wpisanaLiczba) {
+                System.out.println("wpisano za dużo");
+            } else {
+                System.out.println("Wpisano za mało");
+            }
             wpisanaLiczba = klawiatura.nextInt();
             System.out.println("Wpisano liczbę" + wpisanaLiczba);
-        if (losowanaLiczba == wpisanaLiczba) {
-            System.out.println("Gratulacje");
-            break;
         }
-        else if(losowanaLiczba<wpisanaLiczba){
-            System.out.println("wpisano za dużo");
-        }
-        else{
-            System.out.println("Wpisano za mało");
-        }
-        }
+        System.out.println("Gratulacje");
 
     }
 }
