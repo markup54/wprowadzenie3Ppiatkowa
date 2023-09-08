@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,7 +30,29 @@ słowniki Map para klucz wartosc
             System.out.println(wartoscWylosowana);
         }
 
+        ArrayList<Integer> wpisaneLiczby = new ArrayList<>();
+        Scanner klawiatura = new Scanner(System.in);
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Wstaw "+i+" liczbę");
+            int liczba  = klawiatura.nextInt();
+            while(wpisaneLiczby.contains(liczba)){
+                System.out.println("Podaj inna liczbę");
+                liczba = klawiatura.nextInt();
+            }
+            wpisaneLiczby.add(liczba);
 
+        }
+        System.out.println("Wpisane liczby"+wpisaneLiczby);
+        List<Integer> trafioneLiczby = new LinkedList<>();
+
+        for (Integer wpisanaLiczba:
+             wpisaneLiczby) {
+            if(wylosowaneLiczby.contains(wpisanaLiczba))
+                trafioneLiczby.add(wpisanaLiczba);
+        }
+        System.out.println("Odgadnięto "+trafioneLiczby);
+        //TODO: wydzielić do metod losuj wstaw sprawdz
+        //TODO: wydzielić do odzielnej klasy
 
 
     }
